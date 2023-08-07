@@ -5,7 +5,7 @@ from telebot import types
 
 bot = telebot.TeleBot('6105992511:AAHHw1UQ39NcZU0EewnCY8ZM-UtSmS5k5XE')
 admin_id = [819119213, 424263646]
-ldata = '9 серпня о 19:00'  # ldata='9 серпня о 19:00'
+ldata = '9 серпня о 19:00'  # ldata='9 серпня о 19:00' не работает
 
 
 @bot.message_handler(commands=['start'])
@@ -26,6 +26,10 @@ def start(message):
         user_id = [message.chat.id]
         cursor.execute("INSERT INTO login_id VALUES(?);", user_id)
         connect.commit()
+
+    with open('chatids.txt', "r+") as user_file:
+        if str(message.from_user.id) not in user_file.read().split("\n"):
+            user_file.write(f'{message.from_user.id}\n')
     markup = types.InlineKeyboardMarkup()
 
     btn2 = types.InlineKeyboardButton(text="Наш сайт", url="https://it-testing-school.com/ua")
