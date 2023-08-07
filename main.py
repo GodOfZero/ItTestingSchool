@@ -1,13 +1,37 @@
 import sqlite3
+from  sqlite3 import connect
 import telebot
 from telebot import types
 bot = telebot.TeleBot('6105992511:AAHHw1UQ39NcZU0EewnCY8ZM-UtSmS5k5XE')
 admin_id = 819119213
 
+
+
+
+
 @bot.message_handler(commands=['start'])
 def start(message):
     # with open('chatids.txt','a+') as chatids:
     #     print(message.chat.id,file=chatids)
+    connect = sqlite3.connect('users.db')
+    cursor = connect.cursor()
+
+    cursor.execute("CREATE TABLE IF NOT EXISTS login_id( id INTEGER)")
+
+    connect.commit()
+
+    people_id = message.chat.id
+    cursor.execute(f"SELECT id FROM login_id WHERE id = {people_id}")
+
+    data = cursor.fetchone()
+    if data is None:
+        user_id = [message.chat.id]
+        cursor.execute("INSERT INTO login_id VALUES(?);", user_id)
+        connect.commit()
+
+
+
+
     with open('chatids.txt', "r+") as user_file:
         if str(message.from_user.id) not in user_file.read().split("\n"):
             user_file.write(f'{message.from_user.id}\n')
@@ -27,12 +51,16 @@ def start(message):
 @bot.message_handler(commands=['rassylka30'])
 def rassylka(message):
     if message.chat.id == admin_id:
-        for i in open('chatids.txt','r').readlines():
+        connect = sqlite3.connect('users.db')
+        cursor = connect.cursor()
+        cursor.execute("SELECT id FROM login_id")
+        user_ids = cursor.fetchall()
+        for user_id in user_ids:
             file = open('Photo/v30.mp4', 'rb')
             markup1 = types.InlineKeyboardMarkup()
 
             try:
-               bot.send_video(i, file,caption='❗️ Майже 30 хвилин до прямого ефіру.\nДе ми розповімо: \n \n😮 Як без досвіду в ІТ отримати роботу\n😮 Незалежно вам 25 чи 50 років\n😮 Працювати віддалено з дому\n😮Як стабільно заробляти 1000$\n\n❌ Цю інформацію ніхто не розкаже!\n\n❗️ Через 30 хвилин ми розпочинаємо!')
+               bot.send_video(user_id, file,caption='❗️ Майже 30 хвилин до прямого ефіру.\nДе ми розповімо: \n \n😮 Як без досвіду в ІТ отримати роботу\n😮 Незалежно вам 25 чи 50 років\n😮 Працювати віддалено з дому\n😮Як стабільно заробляти 1000$\n\n❌ Цю інформацію ніхто не розкаже!\n\n❗️ Через 30 хвилин ми розпочинаємо!')
             except telebot.apihelper.ApiException:
                 pass
 
