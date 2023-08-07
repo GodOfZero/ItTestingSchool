@@ -2,7 +2,7 @@ import sqlite3
 import telebot
 from telebot import types
 bot = telebot.TeleBot('6105992511:AAHHw1UQ39NcZU0EewnCY8ZM-UtSmS5k5XE')
-
+admin_id = 819119213
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -26,7 +26,7 @@ def start(message):
 
 @bot.message_handler(commands=['rassylka30'])
 def rassylka(message):
-    if message.chat.id == 819119213:
+    if message.chat.id == admin_id:
         for i in open('chatids.txt','r').readlines():
             file = open('Photo/v30.mp4', 'rb')
             markup1 = types.InlineKeyboardMarkup()
@@ -39,7 +39,7 @@ def rassylka(message):
 
 @bot.message_handler(commands=['rassylka60'])
 def rassylka(message):
-    if message.chat.id == 424263646:
+    if message.chat.id == admin_id:
         for i in open('chatids.txt','r').readlines():
             file = open('Photo/v60.mp4', 'rb')
 
@@ -51,7 +51,7 @@ def rassylka(message):
 
 @bot.message_handler(commands=['rassylka5'])
 def rassylka(message):
-    if message.chat.id ==424263646:
+    if message.chat.id ==admin_id:
         for i in open('chatids.txt','r').readlines():
             file = open('Photo/v5.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
@@ -66,7 +66,7 @@ def rassylka(message):
 
 @bot.message_handler(commands=['rassylka'])
 def rassylka(message):
-    if message.chat.id ==424263646:
+    if message.chat.id ==admin_id:
         for i in open('chatids.txt','r').readlines():
             file = open('Photo/vrassylka.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
@@ -78,7 +78,7 @@ def rassylka(message):
 
 @bot.message_handler(commands=['rassylka120'])
 def rassylka(message):
-    if message.chat.id ==424263646:
+    if message.chat.id ==admin_id:
         for i in open('chatids.txt','r').readlines():
             file = open('Photo/v120.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
@@ -91,7 +91,7 @@ def rassylka(message):
 
 @bot.message_handler(commands=['rassylkastart'])
 def rassylka(message):
-    if message.chat.id == 424263646:
+    if message.chat.id == admin_id:
         for i in open('chatids.txt', 'r').readlines():
             file = open('Photo/vstart.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
@@ -106,7 +106,7 @@ def rassylka(message):
 
 @bot.message_handler(commands=['rassylkapromo'])
 def rassylka(message):
-    if message.chat.id == 424263646:
+    if message.chat.id == admin_id:
         for i in open('chatids.txt', 'r').readlines():
             file = open('Photo/vpromo.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
@@ -121,7 +121,7 @@ def rassylka(message):
 
 @bot.message_handler(commands=['rassylkaoplata'])
 def rassylka(message):
-    if message.chat.id == 424263646:
+    if message.chat.id == admin_id:
         for i in open('chatids.txt', 'r').readlines():
             markup2 = types.InlineKeyboardMarkup()
             btn6 = types.InlineKeyboardButton(text="Безкоштовне заняття",
