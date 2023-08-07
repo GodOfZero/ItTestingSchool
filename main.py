@@ -4,7 +4,7 @@ import telebot
 from telebot import types
 
 bot = telebot.TeleBot('6105992511:AAHHw1UQ39NcZU0EewnCY8ZM-UtSmS5k5XE')
-admin_id = [819119213, 424263646]
+admin_id = 819119213
 ldata = '9 серпня о 19:00'  # ldata='9 серпня о 19:00' не работает
 
 
