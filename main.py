@@ -26,7 +26,7 @@ def start(message):
 
 @bot.message_handler(commands=['rassylka30'])
 def rassylka(message):
-    if message.chat.id == 424263646:
+    if message.chat.id == 819119213:
         for i in open('chatids.txt','r').readlines():
             file = open('Photo/v30.mp4', 'rb')
             markup1 = types.InlineKeyboardMarkup()
