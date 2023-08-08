@@ -185,14 +185,14 @@ def rassylka(message):
         cursor.execute("SELECT id FROM login_id")
         user_ids = cursor.fetchall()
         for user_id in user_ids:
+            file = open('Photo/voplata.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
-            btn6 = types.InlineKeyboardButton(text="Безкоштовне заняття",
-                                              url="https://us02web.zoom.us/j/81419393460")
+            btn6 = types.InlineKeyboardButton(text="Оплата курсу",
+                                              url="https://it-testing-school.com/ua/pay-for-qamanual")
             markup2.add(btn6)
             try:
-                bot.send_message(user_id,
-                                 text='🎁 <b>Також сплатити курс можна за прямим посиланням:</b> 👇🏼👇🏼👇🏼👇🏼👇🏼',
-                                 reply_markup=markup2, parse_mode='html')
+                bot.send_video(user_id, file, caption='🎁 <b>Також сплатити курс можна за прямим посиланням:</b> 👇🏼👇🏼👇🏼👇🏼👇🏼', reply_markup=markup2,
+                               parse_mode='html')
             except telebot.apihelper.ApiException:
                 pass
 
