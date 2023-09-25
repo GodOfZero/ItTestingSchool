@@ -6,7 +6,7 @@ from telebot import types
 bot = telebot.TeleBot('6105992511:AAHHw1UQ39NcZU0EewnCY8ZM-UtSmS5k5XE')
 # мой id = 819119213
 # id Инны = 424263646
-admin_id = 819119213
+admin_id = 424263646
 ldata = '4 жовтня о 19:00'  # ldata='9 серпня о 19:00' не работает
 
 
@@ -231,7 +231,7 @@ def rassylka(message):
         for user_id in user_ids:
             file = open('Photo/vzapis.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
-            btn6 = types.InlineKeyboardButton(text="Скачати запис",
+            btn6 = types.InlineKeyboardButton(text="Завантажити запис",
                                               url="https://it-testing-school.com/ua/pay-for-qamanual")
             markup2.add(btn6)
             try:
