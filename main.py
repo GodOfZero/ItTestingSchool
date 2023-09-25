@@ -6,7 +6,7 @@ from telebot import types
 bot = telebot.TeleBot('6105992511:AAHHw1UQ39NcZU0EewnCY8ZM-UtSmS5k5XE')
 # мой id = 819119213
 # id Инны = 424263646
-admin_id = 424263646
+admin_id = 819119213
 ldata = '4 жовтня о 19:00'  # ldata='9 серпня о 19:00' не работает
 
 
