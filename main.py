@@ -236,7 +236,7 @@ def rassylka(message):
             markup2.add(btn6)
             try:
                 bot.send_photo(user_id,file,
-                            caption="ТУТ ССИЛКА ",
+                               caption="Доброго дня! 🤗\nВчора у нас відбулось безкоштовне заняття з  тестування ПЗ. Надаємо вам доступ до запису заняття: 👇🏼👇🏼👇🏼👇🏼\n\n🔥🔥🔥 https://bit.ly/3E9OlrS 🔥🔥🔥\n\n👨🏻‍💻 Наш сайт: https://it-testing-school.com/ua/programm\n\nНаступний курс стартує 11 вересн\nКурс складається із 22 занять\nРозклад: пн. 19:00, чт. 19:00 (за Києвом)\nРівень: з нуля\nМова викладання: українська\nФормат навчання: онлайн з записом\n\nТакож є оплата частинами:\nдо 28.08- 7450 грн\nдо 28.09-  7450 грн\n\nОплату можна здійснити:\n✅ за посиланням https://it-testing-school.com/ua/pay-for-qamanual\n✅ через сайт https://it-testing-school.com/ua/programm\n\nВиникли запитання?\n📞 +380 (99) 001 50 55\n💌 Або пишіть у Телеграм: @InnaTestingSchool (https://t.me/InnaTestingSchool)",
                                reply_markup=markup2,
                                parse_mode='html')
             except telebot.apihelper.ApiException:
