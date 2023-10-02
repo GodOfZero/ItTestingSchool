@@ -58,7 +58,7 @@ def rassylka(message):
             markup2 = types.InlineKeyboardMarkup()
             btn6 = types.InlineKeyboardButton(text="📍📍📍Посилання на безкоштовне заняття📍📍📍",
                                               url="https://us02web.zoom.us/j/81419393460")
-            btn1 = types.InlineKeyboardButton(text="Наш ТГ канал", url="https://t.me/freeittestingschool")
+            btn1 = types.InlineKeyboardButton(text="Наш ТГ-канал", url="https://t.me/freeittestingschool")
             markup2.add(btn6)
             markup2.add(btn1)
             try:
@@ -78,10 +78,10 @@ def rassylka(message):
         user_ids = cursor.fetchall()
         for user_id in user_ids:
             markup2 = types.InlineKeyboardMarkup()
-            btn1 = types.InlineKeyboardButton(text="Наш ТГ канал", url="https://t.me/freeittestingschool")
+            btn1 = types.InlineKeyboardButton(text="Наш ТГ-канал", url="https://t.me/freeittestingschool")
             btn2 = types.InlineKeyboardButton(text="Наш сайт", url="https://it-testing-school.com/ua")
-            markup2.add(btn1)
             markup2.add(btn2)
+            markup2.add(btn1)
             file = open('Photo/v60.mp4', 'rb')
             try:
                 bot.send_video(user_id, file, caption='1 година до початку!!!!!! 👀👀👀👀👀👀', reply_markup=markup2)
@@ -120,13 +120,13 @@ def rassylka(message):
         for user_id in user_ids:
             file = open('Photo/vrassylka.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
-            btn1 = types.InlineKeyboardButton(text="Наш ТГ канал", url="https://t.me/freeittestingschool")
+            btn1 = types.InlineKeyboardButton(text="Наш ТГ-канал", url="https://t.me/freeittestingschool")
             btn2 = types.InlineKeyboardButton(text="Наш сайт", url="https://it-testing-school.com/ua")
             markup2.add(btn2)
             markup2.add(btn1)
             try:
                 bot.send_video(user_id, file,
-                               caption='<b>Сьогодні о 19:00</b> в онлайні розкажемо:\n✅ як можна заробляти з дому маючи ПК та інтернет\n✅ як отримати високоплачувану віддалену професію\n✅ як працевлаштуватись без досвіду\n✅ як отримати 1000$ на місяць\n\n<b>P.S. 🖇 Посилання на заняття буде ближче до старту вебінару сьогодні до 19:00</b>',
+                               caption='<b>Сьогодні о 19:00</b> в онлайні розкажемо:\n✅ як можна заробляти з дому маючи ПК та інтернет\n✅ як отримати високоплачувану віддалену професію\n✅ як працевлаштуватись без досвіду\n✅ як отримати 1000$ на місяць\n\n<b>P.S. 🖇<i> Посилання на заняття буде ближче до старту вебінару сьогодні до 19:00</i></b>',
                                parse_mode='html', reply_markup=markup2)
             except telebot.apihelper.ApiException:
                 pass
@@ -142,10 +142,10 @@ def rassylka(message):
         for user_id in user_ids:
             file = open('Photo/v120.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
-            btn1 = types.InlineKeyboardButton(text="Наш ТГ канал", url="https://t.me/freeittestingschool")
+            btn1 = types.InlineKeyboardButton(text="Наш ТГ-канал", url="https://t.me/freeittestingschool")
             btn2 = types.InlineKeyboardButton(text="Наш сайт", url="https://it-testing-school.com/ua")
-            markup2.add(btn1)
             markup2.add(btn2)
+            markup2.add(btn1)
 
             try:
                 bot.send_video(user_id, file,
