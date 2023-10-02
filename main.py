@@ -99,7 +99,7 @@ def rassylka(message):
         for user_id in user_ids:
             file = open('Photo/v5.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
-            btn6 = types.InlineKeyboardButton(text="📍📍📍Посилання на безкоштовне заняття📍📍📍",
+            btn6 = types.InlineKeyboardButton(text="🖇️Посилання на безкоштовне заняття",
                                               url="https://us02web.zoom.us/j/81419393460")
             markup2.add(btn6)
             try:
