@@ -84,7 +84,7 @@ def rassylka(message):
             markup2.add(btn1)
             file = open('Photo/v60.mp4', 'rb')
             try:
-                bot.send_video(user_id, file, caption='1 година до початку!!!!!! 👀👀👀👀👀👀', reply_markup=markup2)
+                bot.send_video(user_id, file, caption='<b>Вам теж цікаве тестування, але в голові купа питань і сумнівів?</b>\n\nПриміряйте на себе професію QA Engineer вже<u> <b>за годину</b> </u>🔥', reply_markup=markup2)
             except telebot.apihelper.ApiException:
                 pass
 
