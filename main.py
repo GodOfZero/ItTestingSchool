@@ -6,7 +6,8 @@ from telebot import types
 bot = telebot.TeleBot('6105992511:AAHHw1UQ39NcZU0EewnCY8ZM-UtSmS5k5XE')
 # мой id = 819119213
 # id Инны = 424263646
-admin_id = 424263646
+# номер школи = 1134279105
+admin_id = 819119213
 ldata = '4 жовтня о 19:00'  # ldata='9 серпня о 19:00' не работает
 
 
@@ -56,7 +57,7 @@ def rassylka(message):
         for user_id in user_ids:
             file = open('Photo/v30.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
-            btn6 = types.InlineKeyboardButton(text="📍📍📍Посилання на безкоштовне заняття📍📍📍",
+            btn6 = types.InlineKeyboardButton(text="🖇️Посилання на безкоштовне заняття",
                                               url="https://us02web.zoom.us/j/81419393460")
             btn1 = types.InlineKeyboardButton(text="Наш ТГ-канал", url="https://t.me/freeittestingschool")
             markup2.add(btn6)
@@ -64,7 +65,7 @@ def rassylka(message):
             try:
                 bot.send_video(user_id, file,
                                caption='❗️ Майже 30 хвилин до прямого ефіру.\nДе ми розповімо: \n \n😮 Як без досвіду в ІТ отримати роботу\n😮 Незалежно вам 15 чи 50 років\n😮 Працювати віддалено з дому\n😮 Як стабільно заробляти 1000$\n\n❌ Цю інформацію ніхто не розкаже!\n\n❗️ Через 30 хвилин ми розпочинаємо!',
-                               reply_markup=markup2)
+                               reply_markup=markup2,parse_mode='html')
             except telebot.apihelper.ApiException:
                 pass
 
@@ -84,7 +85,9 @@ def rassylka(message):
             markup2.add(btn1)
             file = open('Photo/v60.mp4', 'rb')
             try:
-                bot.send_video(user_id, file, caption='<b>Вам теж цікаве тестування, але в голові купа питань і сумнівів?</b>\n\nПриміряйте на себе професію QA Engineer вже<u> <b>за годину</b> </u>🔥', reply_markup=markup2)
+                bot.send_video(user_id, file, caption='<b>Вам теж цікаве тестування, але в голові купа питань і '
+                                                      'сумнівів?</b> \n\nПриміряйте на себе професію QA Engineer вже '
+                                                      '<b><u>за годину</u></b> 🔥', reply_markup=markup2,parse_mode='html')
             except telebot.apihelper.ApiException:
                 pass
 
@@ -99,16 +102,13 @@ def rassylka(message):
         for user_id in user_ids:
             file = open('Photo/v5.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
-            btn6 = types.InlineKeyboardButton(text="🖇️Посилання на безкоштовне заняття",
-                                              url="https://us02web.zoom.us/j/81419393460")
+            btn6 = types.InlineKeyboardButton(text="🖇️Посилання на безкоштовне заняття",url="https://us02web.zoom.us/j/81419393460")
             markup2.add(btn6)
             try:
                 bot.send_video(user_id, file,
-                               caption='🔊🔊🔊 Стартуємо через 5 хвилин! Скоріше підкючайся, щоб нічого не пропустити 🔊🔊🔊\n\nПосилання на заняття: 👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼',
-                               reply_markup=markup2)
+                               caption='🔊<b> Стартуємо через 5 хвилин! </b>Скоріше підкючайся, щоб нічого не пропустити \n\nПосилання на заняття: 👇🏼👇🏼👇🏼',reply_markup=markup2, parse_mode='html')
             except telebot.apihelper.ApiException:
                 pass
-
 
 @bot.message_handler(commands=['rassylka'])
 def rassylka(message):
@@ -165,13 +165,13 @@ def rassylka(message):
         for user_id in user_ids:
             file = open('Photo/vstart.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
-            btn6 = types.InlineKeyboardButton(text="📍📍📍Посилання на безкоштовне заняття📍📍📍",
+            btn6 = types.InlineKeyboardButton(text="🖇️Посилання на безкоштовне заняття",
                                               url="https://us02web.zoom.us/j/81419393460")
             markup2.add(btn6)
             try:
                 bot.send_video(user_id, file,
-                               caption='🔊🔊🔊 Хутчіше підключайся! 🔊🔊🔊\n\nПосилання на заняття: 👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼',
-                               reply_markup=markup2)
+                               caption='🔊<b> Хутчіше підключайся!</b>\n\nПосилання на заняття: 👇🏼👇🏼👇🏼',
+                               reply_markup=markup2,parse_mode='html')
             except telebot.apihelper.ApiException:
                 pass
 
@@ -186,7 +186,7 @@ def rassylka(message):
         for user_id in user_ids:
             file = open('Photo/vpromo.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
-            btn6 = types.InlineKeyboardButton(text="📍📍📍Посилання на безкоштовне заняття📍📍📍",
+            btn6 = types.InlineKeyboardButton(text="🖇️Посилання на безкоштовне заняття",
                                               url="https://us02web.zoom.us/j/81419393460")
             btn2 = types.InlineKeyboardButton(text="Наш сайт", url="https://it-testing-school.com/ua")
             markup2.add(btn6)
@@ -210,7 +210,7 @@ def rassylka(message):
         for user_id in user_ids:
             file = open('Photo/voplata.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
-            btn6 = types.InlineKeyboardButton(text="Оплата курсу",
+            btn6 = types.InlineKeyboardButton(text="Придбати курс",
                                               url="https://it-testing-school.com/ua/pay-for-qamanual")
             markup2.add(btn6)
             try:
@@ -230,19 +230,72 @@ def rassylka(message):
         for user_id in user_ids:
             file = open('Photo/vzapis.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
-            btn6 = types.InlineKeyboardButton(text="Завантажити запис",
+            btn6 = types.InlineKeyboardButton(text="Переглянути запис",url="https://it-testing-school.com/ua/pay-for-qamanual")
+            btn2=types.InlineKeyboardButton(text="Наш сайт",
+                                                                              url="https://it-testing-school.com/ua/programm")
+            btn4 = types.InlineKeyboardButton(text="Придбати курс",
                                               url="https://it-testing-school.com/ua/pay-for-qamanual")
+
             markup2.add(btn6)
+            markup2.add(btn2,btn4)
             try:
-                bot.send_photo(user_id,file,
-                               caption="Доброго дня! 🤗\nВчора у нас відбулось безкоштовне заняття з  тестування ПЗ. Надаємо вам доступ до запису заняття: 👇🏼👇🏼👇🏼👇🏼\n\n🔥🔥🔥 https://bit.ly/3E9OlrS 🔥🔥🔥\n\n👨🏻‍💻 Наш сайт: https://it-testing-school.com/ua/programm\n\nНаступний курс стартує 11 вересн\nКурс складається із 22 занять\nРозклад: пн. 19:00, чт. 19:00 (за Києвом)\nРівень: з нуля\nМова викладання: українська\nФормат навчання: онлайн з записом\n\nТакож є оплата частинами:\nдо 28.08- 7450 грн\nдо 28.09-  7450 грн\n\nОплату можна здійснити:\n✅ за посиланням https://it-testing-school.com/ua/pay-for-qamanual\n✅ через сайт https://it-testing-school.com/ua/programm\n\nВиникли запитання?\n📞 +380 (99) 001 50 55\n💌 Або пишіть у Телеграм: @InnaTestingSchool (https://t.me/InnaTestingSchool)",
+                bot.send_video(user_id,file,
+                               caption="Доброго дня! 🤗\nВчора у нас відбулось безкоштовне заняття з  тестування ПЗ. Надаємо вам доступ до запису заняття: 👇🏼👇🏼👇🏼\n\n🔥🔥🔥 https://bit.ly/3E9OlrS 🔥🔥🔥\n\n<b>Наступний курс стартує 9 листопада</b>\nКурс складається із 22 занять\nРозклад: пн. 19:00, чт. 19:00 (за Києвом)\nРівень: з нуля\nМова викладання: українська\nФормат навчання: онлайн з записом занять\n\nТільки для вас діє знижка на курс з тестування ПЗ за промокодом <b>SLAVAUKRAINI 🇺🇦 за 14899 грн</b>\n\nТакож є оплата частинами:\nдо 09.10 - 7450 грн\nдо 09.11 -  7449 грн\n\nВиникли запитання?\n📞 +380 (99) 001 50 55\n💌 Або пишіть у Телеграм: @InnaTestingSchool",
                                reply_markup=markup2,
                                parse_mode='html')
             except telebot.apihelper.ApiException:
                 pass
 
+@bot.message_handler(commands=['rassylkalastday'])
+def rassylka(message):
+    if message.chat.id == admin_id:
+        connect = sqlite3.connect('users.db')
+        cursor = connect.cursor()
+        cursor.execute("SELECT id FROM login_id")
+        user_ids = cursor.fetchall()
+        for user_id in user_ids:
+            file = open('Photo/vlastday.mp4', 'rb')
+            markup2 = types.InlineKeyboardMarkup()
+            btn6 = types.InlineKeyboardButton(text="Переглянути запис",url="https://it-testing-school.com/ua/pay-for-qamanual")
+            btn2=types.InlineKeyboardButton(text="Наш сайт",
+                                                                              url="https://it-testing-school.com/ua/programm")
+            btn4 = types.InlineKeyboardButton(text="Придбати курс",
+                                              url="https://it-testing-school.com/ua/pay-for-qamanual")
 
 
+            markup2.add(btn2,btn4)
+            try:
+                bot.send_video(user_id,file,
+                               caption="<b>ОСТАННІЙ ДЕНЬ ЗНИЖКИ НА КУРС</b>\n\nБільше такого <b>не буде</b>!",
+                               reply_markup=markup2,
+                               parse_mode='html')
+            except telebot.apihelper.ApiException:
+                pass
 
+@bot.message_handler(commands=['rassylka36'])
+def rassylka(message):
+    if message.chat.id == admin_id:
+        connect = sqlite3.connect('users.db')
+        cursor = connect.cursor()
+        cursor.execute("SELECT id FROM login_id")
+        user_ids = cursor.fetchall()
+        for user_id in user_ids:
+            file = open('Photo/v36.mp4', 'rb')
+            markup2 = types.InlineKeyboardMarkup()
+            btn6 = types.InlineKeyboardButton(text="Переглянути запис",url="https://it-testing-school.com/ua/pay-for-qamanual")
+            btn2=types.InlineKeyboardButton(text="Наш сайт",
+                                                                              url="https://it-testing-school.com/ua/programm")
+            btn4 = types.InlineKeyboardButton(text="Придбати курс",
+                                              url="https://it-testing-school.com/ua/pay-for-qamanual")
+
+
+            markup2.add(btn2,btn4)
+            try:
+                bot.send_video(user_id,file,
+                               caption="<b>ЗАЛИШИЛОСЬ 36 ГОДИН</b>\nВстигни придбати курс з тестування з максимальною вигодою <b>за 14900 грн!\n</b>Ціна на курс вже не буде такою <b>НІКОЛИ</b>.\n\n+380 (63) 519 33 19 ",
+                               reply_markup=markup2,
+                               parse_mode='html')
+            except telebot.apihelper.ApiException:
+                pass
 
 bot.polling(none_stop=True)
