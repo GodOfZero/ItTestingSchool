@@ -7,7 +7,7 @@ bot = telebot.TeleBot('6105992511:AAHHw1UQ39NcZU0EewnCY8ZM-UtSmS5k5XE')
 # мой id = 819119213
 # id Инны = 424263646
 # номер школи = 1134279105
-admin_id = 819119213
+admin_id = 1134279105
 ldata = '18 жовтня о 19:00'  # ldata='9 серпня о 19:00' не работает
 
 
