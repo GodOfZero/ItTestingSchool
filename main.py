@@ -8,7 +8,7 @@ bot = telebot.TeleBot('6105992511:AAHHw1UQ39NcZU0EewnCY8ZM-UtSmS5k5XE')
 # id Инны = 424263646
 # номер школи = 1134279105
 admin_id = 819119213
-ldata = '4 жовтня о 19:00'  # ldata='9 серпня о 19:00' не работает
+ldata = '18 жовтня о 19:00'  # ldata='9 серпня о 19:00' не работает
 
 
 @bot.message_handler(commands=['start'])
@@ -34,16 +34,16 @@ def start(message):
         if str(message.from_user.id) not in user_file.read().split("\n"):
             user_file.write(f'{message.from_user.id}\n')
     markup = types.InlineKeyboardMarkup()
-    # btn1 = types.InlineKeyboardButton(text="Наш ТГ канал", url="https://t.me/freeittestingschool")
+    btn1 = types.InlineKeyboardButton(text="Наш ТГ канал", url="https://t.me/freeittestingschool")
     btn2 = types.InlineKeyboardButton(text="Наш сайт", url="https://it-testing-school.com/ua")
     btn3 = types.InlineKeyboardButton(text="Контакти", url="https://it-testing-school.com/ua/contact-us")
     btn4 = types.InlineKeyboardButton(text="Оплата курсу", url="https://it-testing-school.com/ua/pay-for-qamanual")
 
     markup.add(btn2, btn3)
-
+    markup.add(btn1)
     video = open('Photo/v1s.mp4', 'rb')
     bot.send_video(message.chat.id, video,
-                   caption='Привіт👋🏼! \nВже зовсім скоро ми проведемо безкоштовне онлайн заняття з тестування ПЗ! \n\nКОЛИ? \n🗓 <b> 4 жовтня о 19:00 </b> \n\nДЕ? \n🔗 Посилання на заняття буде у цьому боті 📍 ближче до старту вебінару \n\nЦІЛЬ \n👨🏻‍💻 Дізнатися все про те, хто такий тестувальник та, що йому потрібно знати \n\nМи в Інстаграм:\nhttps://www.instagram.com/it_testing_school \n\nВиникли запитання?\n📞 +380 (99) 001 50 55\n💌 Або пишіть у Телеграм: @InnaTestingSchool',
+                   caption='Привіт👋🏼! \nВже зовсім скоро ми проведемо безкоштовне онлайн заняття з тестування ПЗ! \n\nКОЛИ? \n🗓 <b> 18 жовтня о 19:00 </b> \n\nДЕ? \n🔗 Посилання на заняття буде у цьому боті 📍 ближче до старту вебінару \n\nЦІЛЬ \n👨🏻‍💻 Дізнатися все про те, хто такий тестувальник та, що йому потрібно знати \n\nМи в Інстаграм:\nhttps://www.instagram.com/it_testing_school \n\nВиникли запитання?\n📞 +380 (99) 001 50 55\n💌 Або пишіть у Телеграм: @InnaTestingSchool',
                    reply_markup=markup, parse_mode='html')
 
 
