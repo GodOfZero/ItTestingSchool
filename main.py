@@ -191,27 +191,27 @@ def rassylka(message):
 
 
 
-# @bot.message_handler(commands=['rassylka30'])
-# def rassylka(message):
-#     if message.chat.id == admin_id:
-#         connect = sqlite3.connect('users.db')
-#         cursor = connect.cursor()
-#         cursor.execute("SELECT id FROM login_id")
-#         user_ids = cursor.fetchall()
-#         for user_id in user_ids:
-#             file = open('Photo/v30.mp4', 'rb')
-#             markup2 = types.InlineKeyboardMarkup()
-#             btn6 = types.InlineKeyboardButton(text="🖇️Посилання на безкоштовне заняття",
-#                                               url="https://us02web.zoom.us/j/81419393460")
-#             btn1 = types.InlineKeyboardButton(text="Наш ТГ-канал", url="https://t.me/freeittestingschool")
-#             markup2.add(btn6)
-#             markup2.add(btn1)
-#             try:
-#                 bot.send_video(user_id, file,
-#                                caption='❗️ Майже 30 хвилин до прямого ефіру.\nДе ми розповімо: \n \n😮 Як без досвіду в ІТ отримати роботу\n😮 Незалежно вам 15 чи 50 років\n😮 Працювати віддалено з дому\n😮 Як стабільно заробляти 1000$\n\n❌ Цю інформацію ніхто не розкаже!\n\n❗️ Через 30 хвилин ми розпочинаємо!',
-#                                reply_markup=markup2,parse_mode='html')
-#             except telebot.apihelper.ApiException:
-#                 pass
+@bot.message_handler(commands=['rassylka30'])
+def rassylka(message):
+    if message.chat.id == admin_id:
+        connect = sqlite3.connect('users.db')
+        cursor = connect.cursor()
+        cursor.execute("SELECT id FROM login_id")
+        user_ids = cursor.fetchall()
+        for user_id in user_ids:
+            file = open('Photo/v30.mp4', 'rb')
+            markup2 = types.InlineKeyboardMarkup()
+            btn6 = types.InlineKeyboardButton(text="🖇️Посилання на безкоштовне заняття",
+                                              url="https://us02web.zoom.us/j/81419393460")
+            btn1 = types.InlineKeyboardButton(text="Наш ТГ-канал", url="https://t.me/freeittestingschool")
+            markup2.add(btn6)
+            markup2.add(btn1)
+            try:
+                bot.send_video(user_id, file,
+                               caption='❗️ Майже 30 хвилин до прямого ефіру.\nДе ми розповімо: \n \n😮 Як без досвіду в ІТ отримати роботу\n😮 Незалежно вам 15 чи 50 років\n😮 Працювати віддалено з дому\n😮 Як стабільно заробляти 1000$\n\n❌ Цю інформацію ніхто не розкаже!\n\n❗️ Через 30 хвилин ми розпочинаємо!',
+                               reply_markup=markup2,parse_mode='html')
+            except telebot.apihelper.ApiException:
+                pass
 #
 #
 # @bot.message_handler(commands=['rassylka60'])
