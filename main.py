@@ -97,22 +97,50 @@ def rassylka(message):
         cursor = connect.cursor()
         cursor.execute("SELECT id FROM login_id")
         user_ids = cursor.fetchall()
-        for user_id in user_ids:
-            with open('Photo/v1s.mp4', 'rb') as file:
+        for user_id_tuple in user_ids:
+            user_id = user_id_tuple[0]
+            with open('Photo/cs2.mp4', 'rb') as file:
              markup2 = types.InlineKeyboardMarkup()
              btn6 = types.InlineKeyboardButton(text="Посилання для друга",
                                               url="https://it-testing-school.com/ua/programm")
              btn1 = types.InlineKeyboardButton(text="Наш ТГ-канал", url="https://t.me/freeittestingschool")
              markup2.add(btn6)
              try:
-                bot.send_video(user_id, file,
-                               caption='Вже завтра о 19:00 ми проведемо для вас безкоштовний вебінар з тестування!\n\nОбовʼязково постав собі нагадування, щоб не пропустити головну подію цієї осені 🔥\n\nА також запрошуй друзів ⬇️',
-                               reply_markup=markup2,parse_mode='html')
+                bot.send_message(user_id,
+                                text='Вже завтра о 19:00 ми проведемо для вас безкоштовний вебінар з тестування!\n\nОбовʼязково постав собі нагадування, щоб не пропустити головну подію цієї осені 🔥\n\nhttps://youtu.be/Jw0BWpTCDJY?si=E2LlwTNg3kFTI4P2\n\nА також запрошуй друзів ⬇️',
+                                reply_markup=markup2,parse_mode='html')
              except telebot.apihelper.ApiException:
                 pass
 
 
 
+
+
+# @bot.message_handler(commands=['rassylka2dayss'])
+# def rassylka(message):
+#     if message.chat.id == admin_id:
+#         connect = sqlite3.connect('users.db')
+#         cursor = connect.cursor()
+#         cursor.execute("SELECT id FROM login_id")
+#         user_ids = cursor.fetchall()
+#         for user_id in user_ids:
+#             # file = open('Photo/cs2.mp4.mp4', 'rb')
+#             markup2 = types.InlineKeyboardMarkup()
+#             btn1 = types.InlineKeyboardButton(text="Сергій",
+#                                               url="https://youtu.be/WlYiWeX1FG4")
+#             btn2 = types.InlineKeyboardButton(text="Олексій", url="https://youtu.be/wk00dx8pF_Y")
+#             btn3 = types.InlineKeyboardButton(text="Микита", url="https://youtu.be/Y6yJfnft6e0?si=mLkNMLsEetqRiTed")
+#             btn4 = types.InlineKeyboardButton(text="Влада", url="https://youtu.be/yG5cdtvTpUE")
+#             # markup2.add(btn1)
+#             # markup2.add(btn2)
+#             # markup2.add(btn3)
+#             # markup2.add(btn4)
+#             try:
+#                 bot.send_message(user_id,
+#                                  text='https://youtu.be/Jw0BWpTCDJY?si=E2LlwTNg3kFTI4P2\nВже через завтра ти поринеш в самий довгоочікуваний вебінар цієї осені 🔥\n\nТому, хочемо трішки підготувати тебе до нього 👌🏼\n\nНаші випускники вже готові поділитися з тобою своїм досвідом закінчення курсу QA з нуля та старту роботи в айті 😍',
+#                                  parse_mode='html')
+#             except telebot.apihelper.ApiException:
+#                 pass
 
 
 
@@ -123,30 +151,24 @@ def rassylka(message):
         cursor = connect.cursor()
         cursor.execute("SELECT id FROM login_id")
         user_ids = cursor.fetchall()
-        for user_id in user_ids:
-            file = open('Photo/v1s.mp4.mp4', 'rb')
-            markup2 = types.InlineKeyboardMarkup()
-            btn1 = types.InlineKeyboardButton(text="Сергій",
-                                              url="https://youtu.be/WlYiWeX1FG4")
-            btn2 = types.InlineKeyboardButton(text="Олексій", url="https://youtu.be/wk00dx8pF_Y")
-            btn3 = types.InlineKeyboardButton(text="Микита", url="https://youtu.be/Y6yJfnft6e0?si=mLkNMLsEetqRiTed")
-            btn4 = types.InlineKeyboardButton(text="Влада", url="https://youtu.be/yG5cdtvTpUE")
-            markup2.add(btn1)
-            markup2.add(btn2)
-            markup2.add(btn3)
-            markup2.add(btn4)
-            try:
-                bot.send_video(user_id, file,
-                               caption='Вже через завтра ти поринеш в самий довгоочікуваний вебінар цієї осені 🔥\n\nТому, хочемо трішки підготувати тебе до нього 👌🏼\n\nНаші випускники вже готові поділитися з тобою своїм досвідом закінчення курсу QA з нуля та старту роботи в айті 😍',
-                               reply_markup=markup2,parse_mode='html')
-            except telebot.apihelper.ApiException:
-                pass
-
-
-
-
-
-
+        for user_id_tuple in user_ids:
+                        user_id = user_id_tuple[0]
+                        markup2 = types.InlineKeyboardMarkup()
+                        btn1 = types.InlineKeyboardButton(text="Сергій",
+                                                          url="https://youtu.be/WlYiWeX1FG4")
+                        btn2 = types.InlineKeyboardButton(text="Олексій", url="https://youtu.be/wk00dx8pF_Y")
+                        btn3 = types.InlineKeyboardButton(text="Микита", url="https://youtu.be/Y6yJfnft6e0?si=mLkNMLsEetqRiTed")
+                        btn4 = types.InlineKeyboardButton(text="Влада", url="https://youtu.be/yG5cdtvTpUE")
+                        markup2.add(btn1)
+                        markup2.add(btn2)
+                        markup2.add(btn3)
+                        markup2.add(btn4)
+                        try:
+                            bot.send_message(user_id,
+                                 text="Вже завтра ти поринеш в самий довгоочікуваний вебінар цієї осені 🔥\n\nТому, хочемо трішки підготувати тебе до нього 👌🏼\n\nНаші випускники вже готові поділитися з тобою своїм досвідом закінчення курсу QA з нуля та старту роботи в айті 😍",
+                                 parse_mode='html',reply_markup=markup2)
+                        except telebot.apihelper.ApiException:
+                                  pass
 
 
 
@@ -207,6 +229,7 @@ def rassylka(message):
             markup2.add(btn6)
             markup2.add(btn1)
             try:
+
                 bot.send_video(user_id, file,
                                caption='❗️ Майже 30 хвилин до прямого ефіру.\nДе ми розповімо: \n \n😮 Як без досвіду в ІТ отримати роботу\n😮 Незалежно вам 15 чи 50 років\n😮 Працювати віддалено з дому\n😮 Як стабільно заробляти 1000$\n\n❌ Цю інформацію ніхто не розкаже!\n\n❗️ Через 30 хвилин ми розпочинаємо!',
                                reply_markup=markup2,parse_mode='html')
