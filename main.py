@@ -98,7 +98,7 @@ def rassylka(message):
         cursor.execute("SELECT id FROM login_id")
         user_ids = cursor.fetchall()
         for user_id in user_ids:
-            with open('Photo/cs2.mp4', 'rb') as file:
+            with open('Photo/v1s.mp4', 'rb') as file:
              markup2 = types.InlineKeyboardMarkup()
              btn6 = types.InlineKeyboardButton(text="Посилання для друга",
                                               url="https://it-testing-school.com/ua/programm")
@@ -124,7 +124,7 @@ def rassylka(message):
         cursor.execute("SELECT id FROM login_id")
         user_ids = cursor.fetchall()
         for user_id in user_ids:
-            file = open('Photo/cs2.mp4', 'rb')
+            file = open('Photo/v1s.mp4.mp4', 'rb')
             markup2 = types.InlineKeyboardMarkup()
             btn1 = types.InlineKeyboardButton(text="Сергій",
                                               url="https://youtu.be/WlYiWeX1FG4")
