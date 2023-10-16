@@ -98,17 +98,17 @@ def rassylka(message):
         cursor.execute("SELECT id FROM login_id")
         user_ids = cursor.fetchall()
         for user_id in user_ids:
-            file = open('Photo/cs2.mp4', 'rb')
-            markup2 = types.InlineKeyboardMarkup()
-            btn6 = types.InlineKeyboardButton(text="Посилання для друга",
+            with open('Photo/cs2.mp4', 'rb') as file:
+             markup2 = types.InlineKeyboardMarkup()
+             btn6 = types.InlineKeyboardButton(text="Посилання для друга",
                                               url="https://it-testing-school.com/ua/programm")
-            btn1 = types.InlineKeyboardButton(text="Наш ТГ-канал", url="https://t.me/freeittestingschool")
-            markup2.add(btn6)
-            try:
+             btn1 = types.InlineKeyboardButton(text="Наш ТГ-канал", url="https://t.me/freeittestingschool")
+             markup2.add(btn6)
+             try:
                 bot.send_video(user_id, file,
                                caption='Вже завтра о 19:00 ми проведемо для вас безкоштовний вебінар з тестування!\n\nОбовʼязково постав собі нагадування, щоб не пропустити головну подію цієї осені 🔥\n\nА також запрошуй друзів ⬇️',
                                reply_markup=markup2,parse_mode='html')
-            except telebot.apihelper.ApiException:
+             except telebot.apihelper.ApiException:
                 pass
 
 
